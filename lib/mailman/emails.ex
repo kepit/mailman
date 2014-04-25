@@ -69,7 +69,7 @@ defmodule Mailman.Emails do
   end
 
   def compile_plain(envelope) when is_record(envelope, Mailman.Envelope) do
-    "#{header_for(envelope)} \r\n\r\n#{DataEncoding.quoted_from(envelope.parts[:plain])}" 
+    "#{header_for(envelope)} \r\n\r\n#{envelope.parts[:plain]}" 
   end
 
   def compile_alternatives(envelope) when is_record(envelope, Mailman.Envelope) do
