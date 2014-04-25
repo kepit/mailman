@@ -100,11 +100,11 @@ defmodule Mailman.Emails do
   end
 
   def plain_part(envelope) do
-    "#{plain_header} \r\n\r\n#{DataEncoding.quoted_from(envelope.parts[:plain])}"
+    "#{plain_header} \r\n\r\n#{envelope.parts[:plain]}"
   end
 
   def html_part(envelope) do
-    "#{html_header} \r\n\r\n#{DataEncoding.quoted_from(envelope.parts[:html])}"
+    "#{html_header} \r\n\r\n#{envelope.parts[:html]}"
   end
 
   def plain_from_html_part(_) do
