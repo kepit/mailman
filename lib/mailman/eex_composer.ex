@@ -1,6 +1,6 @@
 defmodule Mailman.EexComposer do
   def compile_text_part(config, mode, email) when mode in [:html, :text] do
-    res = Path.join(config.root_path, email.name <> "." <> atom_to_binary(mode)  <> ".eex") |>
+    res = Path.join(config.root_path, email.name <> "." <> Atom.to_string(mode)  <> ".eex") |>
       File.read
     case res do
       {:ok, template} -> EEx.eval_string template, email.data

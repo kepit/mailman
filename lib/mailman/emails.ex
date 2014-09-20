@@ -95,8 +95,8 @@ defmodule Mailman.Emails do
   end
 
   def boundary_for(envelope) do
-    :erlang.list_to_binary(Enum.map(bitstring_to_list(:crypto.hash(:md5, "#{envelope.parts[:plain]} #{envelope.parts[:html]}")), 
-      fn(x) -> integer_to_binary(x, 16) end))
+    List.to_string(Enum.map(String.to_list(:crypto.hash(:md5, "#{envelope.parts[:plain]} #{envelope.parts[:html]}")), 
+      fn(x) -> Integer.to_string(x, 16) end))
   end
 
 end
