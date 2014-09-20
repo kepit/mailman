@@ -4,7 +4,7 @@ defmodule Mailman.Mixfile do
   def project do
     [ app: :mailman,
       version: "0.0.3",
-      elixir: "~> 1.0.0",
+      elixir: ">= 0.13.0",
       deps: deps ]
   end
 
