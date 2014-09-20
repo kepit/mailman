@@ -17,7 +17,7 @@ defmodule Mailman.Mixfile do
   # { :foobar, "~> 0.1", git: "https://github.com/elixir-lang/foobar.git" }
   defp deps do
     [ 
-      { :gen_smtp, ~r/0\.1/, git: "https://github.com/Vagabond/gen_smtp.git" }
+      { :gen_smtp, git: "https://github.com/Vagabond/gen_smtp.git" }
     ]
   end
 end
